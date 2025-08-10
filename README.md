@@ -1,147 +1,158 @@
-📌 Kanban Board — React Mini Project
-A simple yet functional Kanban Board built with React, designed to demonstrate drag-and-drop task management, persistent storage, and a clean, modular code structure.
+# Kanban Board
 
-This project follows the provided specifications and includes bonus features like task creation, editing, deletion, subtasks, and visual due date indicators.
+A minimalist, elegant Kanban board application built with React, TypeScript, and Material-UI. This project features a clean, modern interface with drag-and-drop functionality for task management across four customizable columns.
 
-🚀 Features
-Core Functionality
-Four columns:
+![Kanban Board Screenshot](./public/logo192.png)
 
-🟦 Not Started
+## 🚀 Features
 
-🟨 In Progress
+### Core Features
+- **Four Column Layout**: Not Started, In Progress, Blocked, and Done
+- **Drag & Drop**: Seamlessly move tasks between columns using react-beautiful-dnd
+- **Task Persistence**: All tasks persist across browser reloads using localStorage
+- **Responsive Design**: Clean, Material-UI based interface that works on all devices
+- **TypeScript Support**: Fully typed for better developer experience and code reliability
 
-🟥 Blocked
+### ✨ Bonus Features Implemented
+- **Task Management**: Create, edit, and delete tasks with intuitive UI
+- **Subtask Support**: Add and manage subtasks with progress tracking
+- **Smart Due Dates**: Color-coded due date indicators based on urgency
+  - 🔴 Red: Overdue tasks
+  - 🟡 Yellow: Due today or within 24 hours
+  - 🔵 Blue: Due in the near future
+- **Smooth Animations**: Beautiful transitions and hover effects throughout the app
+- **Progress Indicators**: Visual progress bars for tasks with subtasks
+- **Priority Flags**: High-priority task indicators
 
-🟩 Done
+## 🛠️ Tech Stack
 
-Cards represent tasks:
+- **Frontend Framework**: React 18 with TypeScript
+- **UI Library**: Material-UI (MUI) v5
+- **Drag & Drop**: react-beautiful-dnd
+- **State Management**: React Hooks (useState, useEffect, useContext)
+- **Styling**: Material-UI styled components + custom CSS
+- **Icons**: Material-UI Icons
+- **Build Tool**: Create React App with TypeScript template
+- **Testing**: Jest + React Testing Library
 
-Display task title
+## 📦 Project Structure
 
-Optional due date and subtasks
+```
+kanban-board-new/
+├── public/
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── Column.tsx          # Individual column component
+│   │   ├── KanbanBoard.tsx     # Main board container
+│   │   ├── TaskCard.tsx        # Individual task card
+│   │   └── TaskDialog.tsx      # Task creation/editing modal
+│   ├── data/
+│   │   └── initialData.ts      # Sample data and types
+│   ├── types/
+│   │   └── index.ts            # TypeScript type definitions
+│   ├── App.tsx                 # Main application component
+│   ├── App.css                 # Global styles
+│   ├── index.tsx               # Application entry point
+│   └── index.css               # Base CSS styles
+├── package.json
+├── package-lock.json
+├── .gitignore
+└── README.md
+```
 
-Drag & Drop:
+## 🚀 Getting Started
 
-Move cards between columns with smooth drag-and-drop support
+### Prerequisites
+- Node.js (version 14.0 or higher)
+- npm or yarn package manager
 
-Persistence:
+### Installation
 
-Tasks are stored in localStorage and remain after a page reload
+1. **Clone the repository**
+   ```bash
+   git clone <your-private-repo-url>
+   cd kanban-board-new
+   ```
 
-✨ Bonus Features
-➕ Create new tasks directly from the UI
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-✏ Edit existing tasks (title, due date, subtasks)
+3. **Start the development server**
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-❌ Delete tasks
+4. **Open your browser**
+   Navigate to `http://localhost:3000` to view the application.
 
-✅ Subtask tracking with checkboxes
+### Available Scripts
 
-🎨 Due date urgency colors:
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (not recommended)
 
-Red = overdue
+## 🎯 Usage
 
-Orange = due today
-
-Green = due later
-
-💫 Smooth animations when dragging, adding, or updating tasks
-
-🛠 Tech Stack
-React (Mandatory)
-
-react-beautiful-dnd for drag-and-drop functionality
-
-uuid for unique task IDs
-
-localStorage for persistence
-
-CSS Modules / Tailwind CSS (choose one depending on your styling preference)
-
-Optional: Framer Motion for animations
-
-📂 Project Structure
-ruby
-Copy
-Edit
-src/
-├── components/
-│   ├── Board.jsx       # Main Kanban board container
-│   ├── Column.jsx      # Individual column component
-│   ├── TaskCard.jsx    # Single task card
-│   ├── TaskForm.jsx    # Form for adding/editing tasks
-│   └── SubtaskList.jsx # Handles subtask display and status
-├── hooks/
-│   └── useLocalStorage.js # Custom hook for persistence
-├── utils/
-│   └── dateUtils.js    # Utility functions for due date handling
-├── App.jsx
-├── index.js
-└── styles/
-    └── *.css / *.module.css
-🖥 Setup & Installation
-1️⃣ Clone the repository
-
-bash
-Copy
-Edit
-git clone <YOUR_REPO_URL>
-cd kanban-board
-2️⃣ Install dependencies
-
-bash
-Copy
-Edit
-npm install
-3️⃣ Run the development server
-
-bash
-Copy
-Edit
-npm start
-4️⃣ Open in browser
-
-arduino
-Copy
-Edit
-http://localhost:3000
-📌 How to Use
-Drag and drop tasks between columns to update their status.
-
-Click "Add Task" to create a new task.
-
-Edit tasks by clicking the Edit button on the card.
-
-Delete tasks with the Delete button.
-
-Add subtasks and mark them as complete directly from the card.
-
-Due dates will change card background color based on urgency.
-
-📜 Assumptions
-Single user only — No backend sync or multi-user support.
-
-Task IDs are generated locally and are unique within this board.
-
-Data persistence is handled entirely via browser localStorage.
-
-Drag-and-drop interactions are intended for desktop use primarily (mobile drag may vary).
-
-📸 Screenshots
-(Optional — include screenshots or a GIF demo here)
-
-🧪 Future Improvements
-Backend API for multi-user sync
-
-User authentication
-
-Board customization (rename columns, reorder columns)
-
-Search & filter tasks
-
-📤 Submission
-Pushed to a private GitHub repository
+### Basic Operations
+1. **View Tasks**: Tasks are organized in four columns representing different stages
+2. **Move Tasks**: Drag and drop tasks between columns to update their status
+3. **Add New Task**: Click the floating action button (+ icon) to create a new task
+4. **Edit Task**: Click on any task card to edit its details
+5. **Delete Task**: Use the delete option in the task edit dialog
 
 
+
+## 🏗️ Architecture
+
+### Component Hierarchy
+```
+App
+└── KanbanBoard
+    ├── Column (x4)
+    │   └── TaskCard (multiple)
+    └── TaskDialog
+```
+
+
+
+
+## 🧪 Testing
+
+Run the test suite with:
+```bash
+npm test
+```
+
+
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+
+
+## 📋 Assumptions Made
+
+1. **Data Persistence**: Using localStorage is acceptable for this demo (production would use a backend)
+2. **Task IDs**: Generated using timestamps + random numbers (production would use UUIDs)
+3. **Due Dates**: Only date precision needed (no specific times)
+4. **Subtasks**: Simple text-based items without their own due dates
+5. **User Authentication**: Not required for this implementation
+6. **Responsive Design**: Optimized primarily for desktop with mobile considerations
+
+#
 
