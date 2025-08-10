@@ -3,6 +3,7 @@
 A minimalist, elegant Kanban board application built with React, TypeScript, and Material-UI. This project features a clean, modern interface with drag-and-drop functionality for task management across four customizable columns.
 
 ![Kanban Board Screenshot](./public/logo192.png)
+![App Screenshot](https://raw.githubusercontent.com/username/repo/main/assets/screenshot.png)
 
 ## 🚀 Features
 
